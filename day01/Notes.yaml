@@ -1,0 +1,42 @@
+JavaScript - Web language
+browser validations
+event driven architecture
+  Non blocking IO
+  Asynchronous
+
+Command to execute javascript code
+node filename.js
+
+Data Type
+1. Primitive
+
+  - string (sequence of characters)
+
+  - number
+  - boolean
+  - undefined
+  - null
+
+type tags
+000 - object
+001 - integer
+
+2. Non-Primitive 
+Object, Array, Functions
+
+Variable Declarations
+Best practices for variable naming conventions:
+1. meaningful names
+2. a to z, A to Z, 0 to 9, _ (underscore)
+firstname
+emailId
+class - PlaywrightWrapper
+Don't start with numbers or underscore
+
+Variable - which holds the input
+- var
+    1. Re-assignment
+    2. Block level scoping
+    3. Hoisting
+- let
+- const
