@@ -1,16 +1,8 @@
 📑 Agenda for day01 - Introduction to JavaScript
 
-📌2.30 PM: JS Introduction and History
-📌3.00 PM: Primitives & Data Types
-📌3.30 PM: [Practice]
-📌3.45 PM: Variables
-📌4.30 PM: [Break & Practice]
-📌5.00 PM: Operators & Conditional Statements
-📌5.30 PM: [Practice]
-📌5.45 PM: Looping
-📌6.15 PM: [Practice]
-📌6.30 PM: Wrap & Assignments
-
+📌JS Introduction and History
+📌Primitives & Data Types
+📌Variables
 
 # JS Building Blocks
 In this module, we will take a look at the following:
@@ -19,10 +11,6 @@ In this module, we will take a look at the following:
 
 - **Primitives data types**
 - **Variables - var, let, const**
-- **Operators**
-- **Conditional statements - if, else, switch-case**
-- **Looping constructs - for, while, do - while**
-- **Functions**
 
 ## Introduction to JavaScript
 
