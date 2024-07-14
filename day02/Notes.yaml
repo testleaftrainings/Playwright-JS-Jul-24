@@ -1,0 +1,226 @@
+Function - reusability of the code
+
+Types of Functions
+
+1. Function Declaration / Named Function
+2. Function Expression
+3. Arrow Function
+4. Asynchronous Function
+5. IIFE (Immediately Invoked Function Expression)
+
+Callback function
+Function Hoisting
+
+1. Function Declaration
+
+function userCredentials(parameters) {
+  //Implementation of the function - function body
+}
+
+
+function userCredentials(username){
+    return `Hi ${username}`;
+}
+
+console.log(userCredentials(Vinoth))
+
+2. Function Expression
+
+const functionName = function(parameters) {
+      //function body
+} 
+
+let user = function(name) {
+    console.log(`Hi ${name})
+}
+
+user('Siva');
+
+3. Arrow Function 
+concise way to write functions using => syntax
+
+const name = () =>{
+  //Function body
+}
+
+let user = () => 'Hello, Ramya!';
+console.log(user())
+
+
+test("Title of the test", async ({page}) => {
+
+    const browser = await chromium.launch();
+})
+
+4. Asynchronous function
+
+async functionName() {
+    const browser = await chromium.launch();
+    
+}
+
+
+Callback function
+
+A function which takes another function as an argument inside it is called a callback function
+
+Function Hoisting
+
+1. Function Declaration
+  - completely hoisted including the function body
+  - you can call the function before it is declared in the code
+
+  console.log(userCredentials());
+
+  function userCredentials() {
+    return "Hi, Kowsalya!"
+  }
+
+
+Internally,
+
+ function userCredentials() {
+    return "Hi, Kowsalya!"
+  }
+
+ console.log(userCredentials());
+
+ //Before Hoisting
+
+ //High level logic
+  initializeApp();
+ 
+ function initializeApp() {
+    setupEventListeners();
+    loadInitialData();
+ }
+
+ function setupEventListeners() {
+    //Detailed Implementation
+ }
+
+ function loadInitialData() {
+    //Detailed Implementation
+ }
+ 
+
+
+//After Hoisting 
+
+ function initializeApp() {
+    setupEventListeners();
+    loadInitialData();
+ }
+
+ function setupEventListeners() {
+    //Detailed Implementation
+ }
+
+ function loadInitialData() {
+    //Detailed Implementation
+ }
+  //High level logic
+  initializeApp();
+
+  Function Expression / Arrow function
+    - not hoisted in the same way
+    - only the variable declarations are hoisted, but the assignment (the actual function)
+      is not hoisted
+    - you cannot tell the func before it is assigned
+
+  var sayHi;
+  console.log(sayHi)    //undefined
+  var sayHi = function () {
+    return Hi
+  }
+  console.log(sayHi)    //Hi
+
+
+Operators
+
+1. Arithmentic Operators
+    Addition - '+'
+    Subtraction - '-'
+    Multiplication - '*'
+    Division - '/' 
+    const a = 10
+    const b = 5
+    const res = a/b = 2 (quotient)
+    Modulus - '%'
+    const result = a%b= 0 (remainder)
+
+2. Assignment Operators
+ = , +=, -+,
+ x = 10
+ x+=5 //x = x+5
+ console.log(x);  //15
+3. Comparison Operators - boolean 
+Strict equality ===
+Non-strict equality ==
+!=, >=, <=, >,<
+
+
+4. Logical operators
+logical AND - && 
+
+logical OR - ||
+true || true = true
+true || false = true
+false || true = true
+false || false = false
+
+Logical Not
+!1 = 0
+!0 = 1
+
+Conditional statements
+ perform actions based on the conditions
+ 1. if 
+ 2. if else
+ 3. if else if
+
+ if(condition) {
+   //Code block
+ }
+
+ if(condition) {
+   //Code is executed if the condition is true
+ } esle {
+   //Code is executed if the condition is false
+ }
+
+Multiple conditions to check - Number = 0
+Number>0 - positive
+Number<0 - negative
+Number=0 - neutral
+
+if(condition) {
+   //Code is executed if the condition is true
+ } esle if(condition) {
+   //Code is executed if the condition is true
+ } else {
+   // Code is executed only if condition 1 and condition 2 are false
+ }
+
+ switch case
+
+ switch(expression) {
+     case x :
+      //Code block
+    break;
+
+    case y:
+    //Code block
+    break;
+
+    default:
+    //Code block
+ }
+
+ Looping Statements
+   used to execute a block of code repeatedly, until the condition is failed
+
+   for loop
+   for(initialization; condition; increment) {
+      //Code block is executed if the condition is true
+   }
