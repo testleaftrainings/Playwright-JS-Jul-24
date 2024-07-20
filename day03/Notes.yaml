@@ -1,0 +1,53 @@
+while loop
+  execute the block as long as the specified condition is true,
+  checks the condition first,
+      only if it is true, while block is executed
+      if the condition is false, it never execute the while block
+      initialization is done separately
+
+while(condition) {
+    //Code to be executed
+}
+
+
+do while
+  execute the code at least one time
+  After doing the task at least one time, it will check the condition
+
+  do {
+    //Code block
+  } while (condition)
+
+Pagination
+
+while (next button is enabled){
+  Collect the data
+}
+
+do{
+  //Collect the data
+} while (next button is enabled)
+
+function 1(){
+
+}
+
+function 2(){
+
+}
+
+
+
+let call = function1();
+
+
+export {function1, function2}
+
+
+slice()- Takes a begin index and an optional end index; supports negative indices.
+         Can use negative indices to count from the end of the string.
+         
+substring() - Takes a start index and an optional end index; does not support negative indices.
+              Treats negative indices as `0`.
+
+
