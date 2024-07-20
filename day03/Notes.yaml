@@ -51,3 +51,26 @@ substring() - Takes a start index and an optional end index; does not support ne
               Treats negative indices as `0`.
 
 
+
+Web automation tools
+
+Selenium
+Cypress
+Puppeteer
+Webdriver IO
+
+Playwright 
+websockets - full duplex communication
+CDP - Chrome DevTools Protocols
+
+
+Key core components
+1. Browser instance - copy of the browser (browser)
+2. Browser Context - an isolated environment within the browser instance
+                   - akin to incognito session
+                   - operates independently with its own cookies, local storage, and cache
+                   - making it possible to run tests in parallel without any shared state
+3. Page - an individual tab or a window within the browser context
+        - helps to interact with the web elements
+
+
