@@ -1,10 +1,10 @@
 //Print the values from 10 to 1
 
-// let count = 10;
-// while (count>0) {
-//     console.log(count);
-//     count--;
-// }
+ let count = 10;
+ while (count>0) {
+    console.log(count);
+    count--;
+ }
 
 let continueProgramming = true;
 
