@@ -1,4 +1,4 @@
-# 📑 Agenda for Day 03: Get Started with Playwright
+## 📑 Agenda for Day 03: Get Started with Playwright
 
 📌 Recap on JavaScript Fundamentals
 📌 String Methods
