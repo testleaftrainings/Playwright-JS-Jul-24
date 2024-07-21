@@ -1,0 +1,99 @@
+To run the test
+npx playwright test fileName.spec.ts
+
+1. Test script level
+Open the test in the integrated terminal
+
+await chromium.launch({headless:false})
+
+npx playwright test filename.spec.ts
+
+It is not mandatory to run from the root directory
+All the configurations has to be done inside your test
+Trace, video - write the code inside the function
+
+2. Configuration - playwright.config.ts
+This configuration is done once and it is applied across all the .spec.ts files present inside the tests folder
+npx playwright test fileName.spec.ts
+
+3. CLI - npx playwright test launch-browser.spec.ts --headed project="chromium"
+test({
+
+await chromium.launch()
+})
+It is not mandatory to run the test from the root directory
+You need to the mention all the configurations in the cli
+
+
+projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] ,
+      },
+    },
+
+   /*{
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'webkit',
+      use: { ...devices[''] },
+    }, */
+    3 tests using 3 workers
+
+    DOM - Document Object Model
+    ctrl+F
+
+    Basics of html
+
+    <html>
+    <head>
+      <title> Leaftaps </title>
+    </head>
+    <body>
+    <div>
+    <img>
+
+    </img>
+    <button>
+
+    <a>
+
+    <span>
+
+
+    </html>
+
+
+    Locators
+    1. Playwright Locators
+        role, text
+    2. CSS
+    3. XPath
+
+
+  Basic Locators
+  - id (unique) --> #idValue
+                    tagname#idValue
+                    input#username
+
+  CSS: [attribute = 'attributeValue']
+       [id='username']
+       tagname[attribute = 'attributeValue']
+       input[id='username']
+
+  - name
+  - class
+  use a dot - .attributeValue
+              .decorativeSubmit
+              [attribute = 'attributeValue']
+              [class = 'decorativeSubmit']
+
+  - text/linkText
+
+
+Fixture - helps in setup and teardown process
+setup - creating browser instance, context, page
+teardown - clearing up the resources
