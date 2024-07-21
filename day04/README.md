@@ -6,7 +6,7 @@
 📌 Locators / Selectors [CSS & Playwright getBys]
 📌 Playwright Config file Walkthrough
 
-# Understanding Browser, Context, and Pages
+## Understanding Browser, Context, and Pages
 
 In Playwright, automation is structured around three key objects: Browser, Context, and Pages, each serving distinct roles in the automation workflow.
 
