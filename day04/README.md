@@ -1,4 +1,4 @@
-📑 Agenda for Day 04: Dig Deeper into Playwright
+📑 _Agenda for Day 04: Dig Deeper into Playwright_
 
 📌 Key Browser, Context, Page
 📌 Code your basic first test script
