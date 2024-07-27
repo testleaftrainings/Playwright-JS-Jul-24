@@ -1,0 +1,139 @@
+Locators
+ - to locate the web elements in the page
+
+Different types:
+  - Playwright inbuilt locators
+  - CSS
+  - XPath
+
+Playwright in-built locators
+1. getByRole() - to locate a web element by its role (button, link, checkbox, radio)
+await page.getByRole('link', {name: 'Show'}).click();
+2. getByText() - to locate a web element by text content
+    <div class= "">Log In </div>
+    <span class= "">Log In </span>
+3. getByLabel()- to locate a web element by the label's text
+    <label> Username </label>
+4. getByPlaceholder() - to locate an input by its placeholder value
+5. getByAltText() - to locate a web element by its text alternative
+6. getByTitle() - to locate a web element by its title attribute
+    <span title = "Sign In">
+7. getByTestId() - to locate a web element based on its data-testId attribute
+
+CSS Selectors
+
+1. Type selector
+tagname - <span>
+
+2.Id
+#id
+
+3. Class
+.class
+
+4. Attribute selector
+[attribute = 'value']
+[name = 'Sign In']
+
+Starts with attribute selector
+Select an element with an attribut that starts with a specific value
+tagname[attribute^='value']
+div[class^='inventory']
+
+Ends with attribute seletor
+Select an element with an attribute that ends with a specific value
+tagname[attribute$='value']
+class = btn_primary btn_inventory
+class = btn_secondary btn_inventory
+div[class$='btn_inventory']
+
+Contains attribute selector
+Select an element with an attribute containing a specific substring
+tagname[attribute*='value']
+div[class*='btn']
+
+5. Descendant Combinator
+ancestor descendant
+div p
+
+6. Child combinator
+parent > child
+p>input
+
+7. Adjacent sibling combinator
+element + adjacent
+
+8. General sibling combinator
+element~sibling
+
+<form>
+  <p>
+    <label> 
+    <div class = "">
+    <div>
+    <div>
+    <div>
+    div~div
+  <input>
+
+XPath
+1. Absolute XPath - traverse from the root node
+/html/head/body/div[2]/span/
+2. Relative XPath - current node
+
+Legacy text
+[text = ADD TO CART]
+[text ="ADD TO CART"] - exact text match
+
+Strict mode violation
+
+(//button[text()='ADD TO CART'])[1]
+
+Filtering mechanisms
+1. filter()
+await page.locator('button').filter({hasText:"Simple Dialog"})
+await page.locator('button').filter({has: page.locator("")})
+hasNotText: "Out of Stock"
+
+2. first()
+await page.locator('button').first().click();
+
+3. last()
+await page.locator('button').last().click();
+
+4. nth
+await page.locator('button').nth(0).click(); 
+nth(0) - first match
+nth(1) - second match
+
+await page.locator('selector').fill("democsr");
+const username = page.locator('selector');
+username.hover();
+username.click();
+username.fill();
+reusability and chaining 
+
+await page.fill('selector', 'demosalesmanager');
+
+Timeout
+30000 ms
+30 s
+
+Default timeout : 30 s
+Global test timeout: entire test execution
+config file
+timeout: 60000
+
+Global timeout                  Action Timeout
+overall test execution          click, fill, innerText
+timer starts when the test      30 s by default
+begins                          config - actionTimeout: 40000
+timeout - config                page.setDefaultTimeout(60000)
+                                page.locator("").click({timeout: 10000})
+
+
+timeout: 60000
+actionTimeout:40000
+
+58s
+Sign In 2s
