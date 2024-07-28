@@ -1,0 +1,35 @@
+
+
+then - promise is resolved
+then(onFulfillment, onRejection)
+catch - promise is failed
+catch(onRejected)
+
+then(promiseValue)
+catch(errorMsg)
+
+Array
+let username = "Sneha"
+Store multiple values, you create an array
+JS - hetero
+[Giri, 24, true, [undefined, 'TCS']]
+
+1. Using Array literal
+let userProfiles = ['Giri', 'Selva', "Santhosh", 'Sudarshan']
+2. Using Array constructor
+let userProfiles = new Array('Giri', 'Selva', "Santhosh", 'Sudarshan')
+
+let products = [
+{name: Product1, price: 40},
+{name: Product2, price: 60}
+{name: Product3, price: 30}
+{name: Product4, price: 100}
+{name: Product5, price: 90}
+]
+
+let newProd = products.map(prod => {
+  name: prod.name,
+  price: prod.price*0.1
+})
+
+

@@ -1,0 +1,25 @@
+TypeScript
+1. Static type 
+    detection of errors during the compilation phase
+2. OOPs - Interface, enums, genrics, promises, async-await
+3. Code quality and maintenance
+4. Scalability
+Angular framework - TypeScript
+
+Relationship between TypeScript & JavaScript
+TS is a superset of JS - any valid JS code is also a valid TS code
+
+Global installation
+npm install -g typescript
+
+Local installation
+npm install --save-dev typescript
+
+Initialize the config file
+tsc --init
+
+.ts -->tsc-->.js
+
+To run the ts file
+tsc filename.ts
+node filename.js
