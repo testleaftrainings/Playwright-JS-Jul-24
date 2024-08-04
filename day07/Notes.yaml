@@ -1,0 +1,15 @@
+Datatypes in TypeScript
+
+1. string
+2. number
+3. boolean
+4. any
+5.never
+
+any
+let apiResponse:any = "This is a string";
+apiResponse = 24;
+
+Array - heterogeneous in JS
+Array - homogeneous
+Tuple - heterogenous - fixed
