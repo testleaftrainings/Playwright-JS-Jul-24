@@ -1,0 +1,73 @@
+Select Dropdown
+<select>
+  <option value = "">visible text</option>
+
+selectOptions method
+1. Index
+2. Option's value
+3. Label
+
+Auto Waiting
+Actionability checks
+1. Visibility
+2. Stability
+3. receive events
+4. Enabled
+5. Editable
+
+click - v,s,e,e
+
+Assertions:
+1. Generic Assertions
+asserting values in the tests
+-toBe, toEqual, toBeGreaterThan, toContain, toContainEqual
+2. Locator Assertions
+asserting the locators
+- toBeVisible, toBeEnabled, toBeHidden, toHaveAttribute
+3. Page Assertions
+4. Snapshot Assertions
+5. API Reference Assertions
+
+1. Auto-retry
+retrying mechanism
+5s - default timeout
+expect library
+15s
+Polling
+0.5
+0.5
+0.5
+
+2. Non-retry - which do not have the auto retrying mechanism
+static text verifications
+
+1. Hard Assertion - if the assertion is failed, the test execution
+is stopped immediately - failure report
+Launching the url
+Entering the username
+Entering the password
+Verification check
+Click Login Button
+
+2. Soft Assertion - if the assertion is failed, it will not stop the test
+execution, the test will continue. Failure report after the entire test run is completed
+Launching the url
+Entering the username
+Entering the password
+Verification check
+Click Login Button
+
+Negating matchers
+expect(title).not.toBe("amazon.com")
+await expect(page.locator("#submit")).not.toBeVisible();
+
+
+forbidOnly:!!process.env.CI
+
+forbidOnly - falsy -0
+!falsy - true
+!!falsy - false (boolean)
+
+retries: process.env.CI ? 2 : 1,
+
+
