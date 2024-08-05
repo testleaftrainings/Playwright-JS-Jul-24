@@ -1,11 +1,3 @@
-📑 *_Agenda for Day08: Playwright Advanced_*
-
-📌 Handling dropdown using <select>
-📌 Assertions using expect library
-📌 Auto-waiting
-📌 Playwright config file walkthrough
-
-
 ## Table of Contents
 
 - [Assertions](#assertions)
