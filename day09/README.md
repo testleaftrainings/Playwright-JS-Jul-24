@@ -53,7 +53,7 @@ Playwright allows you to handle dialogs using either `page.on` or `page.once`. T
   });
   ```
 
-  ## 1. Interacting with Frames
+  ## Interacting with Frames
 
 Handling frames is essential for working with web pages that contain multiple embedded documents.
 
