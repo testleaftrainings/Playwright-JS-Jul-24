@@ -1,0 +1,81 @@
+Dialog
+1. Alerts are from the application (javascript)
+2. You cannot inspect the alert
+
+Types of Alerts:
+1. Modal dialog - cannot be inspected
+    - Simple Alert
+        a message + Ok button
+
+    - Confirm Alert
+        a message + OK / Cancel
+        accept the alert/dismiss the alert
+
+    - Prompt Alert
+        a message + Prompt text box + OK / Cancel
+        enter the input and accept the alert
+        dismiss the alert
+
+    - BeforeUnload Alert
+        a message + Leave / Stay
+        accept the alert / dismiss the alert
+
+2. Non-modal dialog
+Sweet Alert - can be inspected
+
+Methods
+
+1. accept("Testleaf") - to accept the alert
+2. dismiss() - to cancel the alert
+3. message() - returns the message displayed
+4. type() - returns the type of the dialog
+    if(dialog.type() === "simple"){
+      dialog.accept();
+    } else
+      
+5. defaultValue() - returns the default value of the prompt dialog
+
+Playwright auto dismiss the alerts in the page
+
+Frame
+
+<frame> - used before HTML 5 (deprecated)
+static contents
+
+<frameset>
+  <frame>
+    <p>
+    <img>
+  </frame>
+</frameset>
+
+Inline frame - <iframe>
+modern web applications
+One html doc embedded into the another html
+supports multimedia contents - videos, ad, weather
+<html>
+  <head>
+  <body>
+    <iframe>
+      <html>
+      <head>
+      <body>
+
+        <iframe>
+        <html>
+
+page.frame
+page.frameLocator
+
+Methods:
+page.frame - simple and straightforward
+1. By id
+2. By url
+3. By index
+
+page.frameLocator - complex scenarios / nested iframes
+supports chaining operations
+page.frameLocator("frame1").("frame2").("frame3").click();
+
+
+
