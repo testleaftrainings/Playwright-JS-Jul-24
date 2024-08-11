@@ -1,0 +1,24 @@
+
+1. Creating a promise --> NOT COMPLETED --> waitForEvent("page")
+ Network speed, application speed
+2. Clicking the button - happening first
+    - a new page is opened
+3. Resolve 
+
+
+
+await page.waitForEvent
+
+resultPromise[1] = [Promise1, Promise2, Promise3]
+
+[newWindow1, newWindow2, newWindow3] = await Promise.all([
+      context.waitForEvent("page"),
+      page.click()
+      context.waitForEvent("page"),
+      page.click("#Open")
+      context.waitForEvent("page"),
+      page.click("")
+  ])
+
+  newWindow1.click()
+  newWindow2
