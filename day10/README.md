@@ -1,4 +1,4 @@
-### Agenda for Day 10: Window & Playwright Advanced
+### Agenda for Day 10: Window, File upload & download
 
 📌 Multiple Windows/Tabs
 📌 File Upload 
