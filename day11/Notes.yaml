@@ -1,0 +1,36 @@
+Introduction to REST API
+
+API - Application Programming Interface
+
+HTTP Methods - Verb - actions to be performed on a particular resource
+1. POST - send the data to the server to create a new resource
+2. GET - retrieve the data from the server
+3. PUT - update a resource that already exists on the server
+4. PATCH - apply partial modifications to the resource
+5. DELETE - remove a resource from the server
+
+CRUD operations - Create, Read, Update & Delete
+
+Headers - pass additional information about the request/
+response between client and the server
+Request headers (client side)
+    - Content-type - specifies the format of the data [json, xml, text, html]
+    - Authorization - credentials information
+    - Accept - format of the response that the client expects
+
+Response headers  - include responses from the server 
+    - Content-type - format of the data in the response body
+    - Content-length - length of the response body
+    - Set-cookie - cookies stored by the client for future requests
+
+Request Params
+key-value pairs 
+1. Query params - filtering of data
+https://dev.291029service-now.com/users?age=25&country=India
+
+2. Path parameters - specific user
+https://dev.291029service-now.com/users/id/123
+
+YWRtaW46V0wrNnJDMHVpK1Jw
+
+YWRtaW46V0wrNnJDMHVpK1Jw
