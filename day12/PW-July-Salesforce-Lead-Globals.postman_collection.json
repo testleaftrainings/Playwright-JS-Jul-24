@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "a8a80a62-fc03-453a-aeb5-da2335e096f8",
+		"name": "PW-July-Salesforce-Lead-Globals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28988315",
+		"_collection_link": "https://solar-space-220954.postman.co/workspace/PW_API~2c83a84c-94f6-466c-996d-ae99b6626e8d/collection/28988315-a8a80a62-fc03-453a-aeb5-da2335e096f8?action=share&source=collection_link&creator=28988315"
+	},
+	"item": [
+		{
+			"name": "Generate the access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Save the response in a variable\r",
+							"var resp = pm.response.json();\r",
+							"//From the response variable extract the access token\r",
+							"var accesstoken = resp.access_token;\r",
+							"//Save the access token in a global variable\r",
+							"pm.globals.set(\"Access_Token\", accesstoken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9pRzvMkjMb6lZlt3YjDQwe.HYIl3TLqTtN5gSZd0eu9FRMgGrFBgIMG9NBBttWHlmR.RKvAXyY4xeyZFu",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "2CD9BC047B2EB6DD92C77BF005DDDBCEE46E155237749F3764367B1E58B56F64",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ranjini.r@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Testleaf@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new lead",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Save the response in a variable\r",
+							"var resp = pm.response.json();\r",
+							"//From the response variable extract the id\r",
+							"var id = resp.id;\r",
+							"//Save id in a global variable \r",
+							"pm.globals.set(\"ID\", id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Sneha\",\r\n    \"LastName\": \"Sangeetha\",\r\n    \"Company\": \"Infosys\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the leads",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific lead",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/{{ID}}",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the lead",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Country\": \"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/{{ID}}",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the created lead",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Access_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/{{ID}}",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
