@@ -1,0 +1,35 @@
+Global Variables
+
+1. Extract the access token from OAuth API response and save it as a global variable
+2. Pass the global variable in the authorization headers of all API
+
+APIRequest
+    used to send HTTP requests for testing web APIs
+    apiRequest = playwright.request
+APIRequestContext
+    Each BrowserContext has an associated APIRequestContext instance
+    apiRequestContext = browserContext.request
+APIResponse
+apiResponse.status()
+statusText()
+headers()
+ok()
+url()
+json()
+text()
+body()
+
+const browser = await chromium.launch();
+const browserContext = await browser.nweContext();
+const apiRequestContext = browserContext.request;
+
+const page = await browserContext.newPage();
+const apiPageRequest = page.request;
+
+{page, request}
+
+Response Time
+Date.now
+performance.now
+reponse.timing()
+axios
