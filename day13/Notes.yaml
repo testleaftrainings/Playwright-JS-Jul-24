@@ -1,0 +1,3 @@
+Shadow DOM
+1. Playwright can pierce the shadow root and interact with the element
+2. Playwright doesn't support XPath to locate an element present inside the shadow roots
