@@ -1,6 +1,6 @@
-# Trace Viewer, Video Capture, Explicit Waits, Test Reporter
+## Trace Viewer, Video Capture, Explicit Waits, Test Reporter
 
-## Table of Contents
+### Table of Contents
 
 - [Video Capture](#video-capture)
 - [Tracing](#tracing)
