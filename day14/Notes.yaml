@@ -1,0 +1,41 @@
+Explicit Waits
+
+1. page.waitForSelector(selector)
+await page.fill("#username", "demosalesmanager");
+await page.fill("#password", crmsfa);
+await page.waitForSelector("#Login");
+await page.click("#Login")
+
+2. page.waitForTimeout(timeout) - debugging
+page.waitForTimeout(5000)
+
+3. page.waitForNavigation() 
+Use: page.waitForUrl()
+- navigating to a new url
+await page.click("#Login");
+await page.waitForNavigation();
+await page.waitForSelector(".slds-truncate");
+
+4. page.waitForLoadState()
+load, domContentLoaded, networkIdle
+load - when the page has fulyy loaded
+domContentloaded - loads the dom along with the external resources (image)
+networkIdle - wait until network activity has settled before proceeding
+
+await page.waitForLoadState('load');
+await page.waitForLoadState('domContentloaded');
+
+await page.click("#Login");
+await page.waitForLoadState('networkidle');
+await page.click('.slds-truncate');
+
+page.waitForEvent('event')
+
+page.waitForResponse()
+
+await page.click("#Submit");
+await page.waitForResponse(response => response.url().includes('/api/data') && response.status() === 201)
+
+page.waitForRequest(request => request.url().includes('/api/submit') && request.method === 'POST')
+
+
