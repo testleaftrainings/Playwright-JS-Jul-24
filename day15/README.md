@@ -1,7 +1,3 @@
-Here's the expanded README.md with additional details on OOP principles, including encapsulation, polymorphism, and abstraction. I've also included a table to compare these concepts.
-
----
-
 # OOPs for Playwright
 
 This README covers key TypeScript concepts, providing explanations and examples for each topic with a focus on web automation testing.
@@ -195,6 +191,3 @@ class SimpleAuth extends Authentication {
 | **Abstraction**   | Hides complex implementation details, exposing only the necessary parts  | Abstract classes and methods                                                               | Simplifies interaction with complex systems          |
 | **Inheritance**   | Enables a new class to inherit properties and methods from an existing class | `extends` keyword to create a subclass                                                     | Facilitates code reuse and hierarchical classification|
 
----
-
-This expanded README now covers the key OOP principles in TypeScript with examples and a comparison table to help differentiate between the concepts.
