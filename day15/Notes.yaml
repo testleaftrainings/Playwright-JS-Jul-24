@@ -1,0 +1,145 @@
+Class
+
+Class is a blueprint or template for creating objects
+define structure and behaviour (attributes and methods)
+
+class Browser {
+
+  browserType;
+  browserContext;
+  page;
+  url;
+
+public void navigateToUrl() {
+  console.log("")
+}
+
+clickElement() {
+
+}
+
+captureScreenshot() {
+
+}
+}
+
+Object
+- an instance of a class
+
+const/let objectName = new Constructor();
+const session = new Browser();
+session.browserType = "Chrome";
+session.navigateToUrl();
+
+Constructor
+- a special method used for initializing newly created objects
+
+Access Modifiers
+keywords used to set the accessibility of classes, methods, and properties
+
+1. public - default
+2. private
+3. protected
+
+
+public class LoginPage {
+
+  public url;
+
+  public loadUrl() {
+  
+  }
+}
+
+2. private - within that class (subclass cannot access the private members)
+
+3. protected - within the class and by any class that extends (inherits from)
+
+OOPs
+1. Encapsulation
+ - way to organize and control access to the data and behavior of an object
+
+class PageActions {
+  private page;
+
+  constructor(page) {
+  this.page = page;
+  }
+
+  public clickElement(selector:string) {
+    this.page.hover("locator");
+    this.page.waitForVisibility();
+    this.page.click("selector");
+
+  }
+}
+
+class Chatter extends PageActions {
+
+public clickAppLauncher() {
+  this.page.clickElement(".sld-truncate");
+}
+}
+
+private browserName;
+
+//Getter method to access the private browsername property
+public getbrowserName(){
+    return this.browserName;
+  }
+
+//Setter method to modify the private prop
+public setBrowsername(newName) {
+    if
+  }
+}
+const name = new Browser("chrome");
+log(name.getBrowsername());
+
+name.setBrowsername("edge")
+
+Inheritance
+1. Single Inheritance
+2. multileve inheritance
+a class is derived from another class, which is itself derived from another class
+
+DashboardPage extends LoginPage extends BasePage
+
+const dashboard = new DashboardPage();
+dashboard.
+
+3. Hierarchial Inheritance
+- multiple classes inherit from a single parent class
+Leaftaps app
+Base Page
+loadurl()
+Login Page extends BasePage
+loadurl()
+Home Page extends BasePage
+
+Leads Page extends BasePage
+Create Lead Page
+Edit Lead
+
+Polymorphism
+1. Compile time polymorphism - method overloading (static)
+2. Runtime Polymorphism - method overriding (dynamic polymorphism)
+
+Method overloading
+- multiple methods with the same name but different parameters (different type, number)
+
+Abstraction 
+  - Abstract class - partial abstraction
+  - Interface --> 100% abstraction
+
+abstract class BasePage {
+  protected page;
+  constructor(page) {
+  this.page = page;
+  }
+
+  abstract navi
+}
+
+
+
