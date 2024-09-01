@@ -1,0 +1,113 @@
+Playwright Test Methods
+
+Hooks 
+1. test.beforeAll
+run once before all tests in a file 
+
+test.beforeAll(async () =>){
+  setup global reources like database connections, API mocking
+}
+test.beforeEach(async () =>{
+  url
+  username
+  password
+  click lgin
+})
+test.afterEach({
+  close browser
+})
+
+test('1', async () => {
+})
+
+test('2', async () => {
+})
+
+test('3', async () => {
+})
+
+2. test.beforeEach
+3. test.afterEach
+4. test.afterAll
+
+beforeAll 
+beforeEach
+test1
+afterEach
+beforeEach
+test2
+afterEach
+beforeEach
+test3
+afterEach
+afterAll
+
+Focus a test - test.only
+Skip a test - test.skip
+
+test(){
+  test.skip(name == 'firefox')
+}
+
+Group a test - test.describe(`Regression suite', () => {
+    test('Login'){
+    }
+
+    test('Ordering the product'){
+    }
+})
+
+test.decribe.configure
+
+test.fixme
+test(){
+test.step ('Step to enter the username', async () => {
+
+}
+}
+
+
+test 1
+test 2
+test 3
+test 4 test.skip
+
+Running 4 tests using 4 workers
+3 passed 1 skipped
+
+Best Practices
+
+1. Modularity and Reusability
+2. Parameterization & Data driven testing
+3. Scalability & Parallel Execution
+4. Error handling & logging
+5. Reporting & Test Results Analysis
+6. Cross browser & cross platform testing
+
+
+Framework Structure
+allure-report
+api
+auth
+constants
+    url constants
+custom-reporter
+custom-fixtures
+node_modules
+test-results
+playwright-report
+pages
+tests
+data-utility
+    csv
+    env
+    json
+    excel
+    faker
+utils
+  playwrightWrapper
+  retry
+package.json
+playwright.config.ts
+ts.config
+README.md
