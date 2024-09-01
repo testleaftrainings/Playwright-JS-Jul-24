@@ -1,5 +1,3 @@
-# Best Practices for Designing Framework
-
 ## Table of Contents
 1. [Best Practices for Designing Framework](#best-practices-for-designing-framework)
    - 1.1 [Modularity](#modularity)
