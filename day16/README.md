@@ -1,8 +1,3 @@
-Here's an updated version of the README.md document with a table of contents added at the beginning:
-
-```markdown
-# README.md
-
 # Best Practices for Designing Framework
 
 ## Table of Contents
