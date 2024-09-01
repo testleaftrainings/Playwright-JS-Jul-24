@@ -15,7 +15,7 @@
    - 2.5 [Strategy](#strategy)
    - 2.6 [Facade](#facade)
 3. [Page Object Model](#page-object-model)
-4. [Playwright Test Methods](#playwright-test-methods)
+4. [Playwright Test Runner Methods](#playwright-test-methods)
 5. [Hooks](#hooks)
 6. [Device Emulation](#device-emulation)
 7. [Geolocation](#geolocation)
@@ -123,22 +123,97 @@
   }
   ```
 
-## Playwright Test Methods
+## Playwright Test Runner Methods
 
-### Overview
-- Playwright provides various test methods to interact with the browser and validate application behavior.
+Playwright provides a variety of test runner methods that allow developers to control the execution flow of tests. These methods include options for running specific tests, skipping tests, grouping tests, and managing setup and teardown logic.
 
-### Common Methods
-- **`page.goto(url)`**: Navigates to the specified URL.
-- **`page.click(selector)`**: Clicks on an element identified by the selector.
-- **`page.fill(selector, text)`**: Enters text into an input field.
-- **`page.expect(selector)`**: Waits for an element to meet a specific condition.
-- **`page.screenshot()`**: Takes a screenshot of the current page.
+### 1. `only`
 
-### Advanced Methods
-- **`page.route(url, handler)`**: Intercepts and modifies network requests.
-- **`page.evaluate(expression)`**: Executes JavaScript within the page context.
-- **`page.setViewportSize()`**: Sets the viewport size for responsive testing.
+- **Description**: Runs a specific test or describe block exclusively. When marked with `only`, all other tests will be ignored.
+- **Use Case**: Useful for focusing on a specific test or suite during debugging or development.
+- **Example**:
+  ```javascript
+  test.only('should display login page', async ({ page }) => {
+      await page.goto('https://example.com/login');
+      // Assertions here
+  });
+  ```
+
+### 2. `skip`
+
+- **Description**: Skips a specific test or describe block without running it. Skipped tests will appear as "skipped" in the test results.
+- **Use Case**: Useful when a test is not relevant in a certain environment or is temporarily not needed.
+- **Example**:
+  ```javascript
+  test.skip('should not run this test', async ({ page }) => {
+      await page.goto('https://example.com');
+      // This test will be skipped
+  });
+  ```
+
+### 3. `fixme`
+
+- **Description**: Marks a test or describe block as needing a fix. The test is skipped and reported as "fixme," indicating it requires attention.
+- **Use Case**: Useful for tracking incomplete or currently failing tests that need to be addressed.
+- **Example**:
+  ```javascript
+  test.fixme('should fix this test later', async ({ page }) => {
+      await page.goto('https://example.com');
+      // This test will be skipped and marked as fixme
+  });
+  ```
+
+### 4. `fail`
+
+- **Description**: Marks a test as expected to fail. If the test fails, it is reported as "expected to fail." If the test passes, it is reported as an unexpected success.
+- **Use Case**: Useful for tracking known issues that are expected to fail until they are resolved.
+- **Example**:
+  ```javascript
+  test.fail('should fail due to a known bug', async ({ page }) => {
+      await page.goto('https://example.com');
+      // Assertions that are expected to fail
+  });
+  ```
+
+### 5. `describe`
+
+- **Description**: Groups related tests together into a test suite. It helps in organizing tests by feature, functionality, or module.
+- **Use Case**: Useful for grouping and managing related tests.
+- **Example**:
+  ```javascript
+  describe('Login Tests', () => {
+      test('should display login page', async ({ page }) => {
+          await page.goto('https://example.com/login');
+          // Assertions here
+      });
+
+      test('should login with valid credentials', async ({ page }) => {
+          await page.goto('https://example.com/login');
+          await page.fill('#username', 'user');
+          await page.fill('#password', 'password');
+          await page.click('#loginButton');
+          // Assertions here
+      });
+  });
+  ```
+
+### 6. `test.step`
+
+- **Description**: Allows breaking down a single test into multiple steps for better organization and reporting.
+- **Use Case**: Useful for making tests more readable and structured by clearly defining steps within a single test.
+- **Example**:
+  ```javascript
+  test('test with steps', async ({ page }) => {
+      await test.step('Step 1: Go to the login page', async () => {
+          await page.goto('https://example.com/login');
+      });
+      await test.step('Step 2: Log in', async () => {
+          await page.fill('#username', 'user');
+          await page.fill('#password', 'password');
+          await page.click('#loginButton');
+      });
+  });
+  ```
 
 ## Hooks
 
