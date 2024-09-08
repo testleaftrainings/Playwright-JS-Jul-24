@@ -1,0 +1,29 @@
+Retry
+1. Extend one of the methods (fill / click methods )
+    Click <<slowdown>> - best practice
+    Wrapper method -> Click after that wait for sometime (retry)
+  
+2. Retry logic to be customized (custom functions)
+    - Check if the test is on retry
+    - Call the wrapper method
+
+3. Change the existing test to use the new method.
+
+Deployment tools
+  Jenkins
+  GitHub Actions
+  GitLabs
+  CircleCI
+  Bamboo
+
+Prerequisites
+1. You should have a github account
+2. You need to create a repo (public/private)
+3. You need to connect your VS code to that repo
+4. You need to configure the playwright git yml
+5. You need to push the code to the github -->GitHub Actions running your code
+6. Download the results and audit!
+
+Usecase: Every time you push the code to Git repo --> PW code (specific tests that 
+you configure) will run on the allocated machines (by github actions) and results
+will be available to view later.
